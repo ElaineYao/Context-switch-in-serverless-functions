@@ -1,3 +1,26 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{cs-web}
+Measuring context switching and memory overheads for linux threads.
+\newblock
+  \url{https://eli.thegreenplace.net/2018/measuring-context-switching-and-memory-overheads-for-linux-threads/}.
+\newblock Accessed: 2022-2-25.
+
+\bibitem{cs-arm}
+Francis~M. David, Jeffrey~C. Carlyle, and Roy~H. Campbell.
+\newblock Context switch overheads for linux on arm platforms.
+\newblock In {\em Proceedings of the 2007 Workshop on Experimental Computer
+  Science}, ExpCS '07, page 3–es, New York, NY, USA, 2007. Association for
+  Computing Machinery.
+
+\bibitem{cs-lmbench}
+Larry~W. McVoy and Carl Staelin.
+\newblock lmbench: Portable tools for performance analysis.
+\newblock In {\em USENIX Annual Technical Conference}, 1996.
+
+\bibitem{cs-pipes}
+John~K. Ousterhout.
+\newblock Why aren't operating systems getting faster as fast as hardware?
+\newblock In {\em USENIX Summer}, 1990.
 
 \end{thebibliography}

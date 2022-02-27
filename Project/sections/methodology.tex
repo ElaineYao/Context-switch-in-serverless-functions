@@ -1,11 +1,42 @@
+
+
+
 \subsection{Challenges}
-The following are the challenges that ...
+Measuring the context switch time in serverless functions has several challenges:
 \begin{itemize}
-	\item [C1] 
-	\item [C2] 
+	\item [C1] Characteristics of context switch in serverless environments
+	Context switch is triggered differently in serverless functions compared to in traditional operating systems as it's scheduled by the cloud provider.
+	And the service provider has the tendency to trigger more functions in the same hardware to get more profits. 
+	Thus, context switch may happen not only due to performance factors like multi-threading/processing, but also provider's profit considerations.
+	\item [C2] Benchmark accuracy
+	As no such benchmark is provided so far, we have to analyze the factors in our own benchmark that may lead to the potential variation to golden value, 
+	in order to reason about the accuracy of the measurement.
+	% Variations to golden values in measurement
 	\item [C3] 
 \end{itemize}
 
-\subsection{Using pipes} 
+\subsection{}
+	To tackle \emph{C1}, we design the following experiments to analyze the factors influencing context switch in serverless environments.
+	We measure the execution time elapse between two adjacent lines of code repeatedly under different configurations in serverless functions.
+	These configurations include %xxxxx
+	Theoriotically, the measured time elapse should be 0 as there is not execution between these two lines. 
+	However, our initial experiments show that this is neither 0 nor a fixed value, indicating that interruption happens between these two lines
+	and the time elapse changes with different configurations. 
+	Although the interruption is not limited to context switch but also page faults handling or container management, 
+	it can still provides insights in the influence of different configurations on context switch time in serverless environments.
+
+
+\subsection{Combine various benchmarks}
+	To tackle \emph{C2}, we first run our own designed benchmarks on local Linux system and compare the results with published benchmarks\cite{cs-lmbench,cs-pipes,cs-arm,cs-web},
+	 ensuring the correctness of the proposed ones. Then we deploy the new benchmarks in serverless functions and compare the results. 
+	 If one of the benchmarks is consistently higher or lower than others, then we'll explore the reasons and this can help us improve our accuracy.
+
+	The previous benchmarks in context switching on Linux system mainly consider %some fa
+	Our initial study to \emph{C1} finds that context switch in serverless environments will also be influenced by %some   
+	We designed the following benchmarks based on prior work.
+	\begin{enumerate}
+		\item 
+	\end{enumerate}
+
 
 % "Based on these traditional methods, we also used pipe communication to implement frequent context switches between two processes."
