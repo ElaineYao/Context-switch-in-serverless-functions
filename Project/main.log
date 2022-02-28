@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.2.27)  27 FEB 2022 15:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.2.27)  27 FEB 2022 17:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -728,17 +728,30 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 93.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 93.
- (./sections/introduction.tex) (./sections/background.tex) (./sections/methodology.tex) (./sections/experiments.tex) (./sections/discussion.tex) (./sections/related-work.tex) (./main.bbl
+ (./sections/introduction.tex) (./sections/background.tex) (./sections/methodology.tex) [1{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+] (./sections/experiments.tex
+Underfull \hbox (badness 2057) in paragraph at lines 8--8
+[]\T1/ptm/b/n/12 (+20) Factors im-pact-ing con-text switches in
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 27.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 27.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 27.
+
+Overfull \hbox (29.80777pt too wide) in paragraph at lines 27--34
+[][] 
+ []
+
+) (./sections/discussion.tex) (./sections/related-work.tex) (./main.bbl
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pcr' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--8
 []\T1/ptm/m/n/10 (+20) Measuring con-text switch-ing and mem-
@@ -762,28 +775,23 @@ Overfull \hbox (122.03789pt too wide) in paragraph at lines 4--8
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [1{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-
-]) [2
-
-] (./main.aux)
+) [2] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: EF54A5ACB8CB57B18C0F74A08905FFD8;2226.
+(rerunfilecheck)             Checksum: 493069181BECA5F5DEFD4743D2B7D5B0;2602.
  ) 
 Here is how much of TeX's memory you used:
- 24974 strings out of 478276
- 468861 string characters out of 5846504
- 762242 words of memory out of 5000000
- 42551 multiletter control sequences out of 15000+600000
- 511135 words of font info for 171 fonts, out of 8000000 for 9000
+ 25017 strings out of 478276
+ 469364 string characters out of 5846504
+ 762385 words of memory out of 5000000
+ 42562 multiletter control sequences out of 15000+600000
+ 512558 words of font info for 190 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 100i,9n,117p,1035b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 100i,9n,117p,1035b,431s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (2 pages, 65364 bytes).
+Output written on main.pdf (2 pages, 70224 bytes).
 PDF statistics:
- 125 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
- 54925 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 140 PDF objects out of 1000 (max. 8388607)
+ 126 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 54933 words of extra memory for PDF output out of 61914 (max. 10000000)
 

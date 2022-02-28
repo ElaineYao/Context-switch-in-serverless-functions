@@ -4,45 +4,45 @@ The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: refences.bib
 Warning--to sort, need author or key in cs-web
-You've used 4 entries,
+You've used 6 entries,
             2118 wiz_defined-function locations,
-            520 strings with 4677 characters,
-and the built_in function-call counts, 1156 in all, are:
-= -- 111
-> -- 39
-< -- 1
-+ -- 16
-- -- 12
-* -- 53
-:= -- 177
-add.period$ -- 13
-call.type$ -- 4
-change.case$ -- 18
+            529 strings with 4995 characters,
+and the built_in function-call counts, 1887 in all, are:
+= -- 187
+> -- 75
+< -- 2
++ -- 30
+- -- 24
+* -- 94
+:= -- 293
+add.period$ -- 20
+call.type$ -- 6
+change.case$ -- 30
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 62
-empty$ -- 113
-format.name$ -- 12
-if$ -- 265
+cite$ -- 7
+duplicate$ -- 99
+empty$ -- 163
+format.name$ -- 24
+if$ -- 429
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 3
-newline$ -- 23
-num.names$ -- 6
-pop$ -- 34
+int.to.str$ -- 6
+missing$ -- 5
+newline$ -- 33
+num.names$ -- 10
+pop$ -- 47
 preamble$ -- 1
-purify$ -- 14
+purify$ -- 24
 quote$ -- 0
-skip$ -- 44
+skip$ -- 75
 stack$ -- 0
-substring$ -- 32
-swap$ -- 19
-text.length$ -- 1
+substring$ -- 54
+swap$ -- 34
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 16
+type$ -- 24
 warning$ -- 1
-while$ -- 7
-width$ -- 5
-write$ -- 45
+while$ -- 12
+width$ -- 7
+write$ -- 69
 (There was 1 warning)

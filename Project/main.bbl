@@ -13,6 +13,13 @@ Francis~M. David, Jeffrey~C. Carlyle, and Roy~H. Campbell.
   Science}, ExpCS '07, page 3–es, New York, NY, USA, 2007. Association for
   Computing Machinery.
 
+\bibitem{cs-datasize}
+Chuanpeng Li, Chen Ding, and Kai Shen.
+\newblock Quantifying the cost of context switch.
+\newblock In {\em Proceedings of the 2007 Workshop on Experimental Computer
+  Science}, ExpCS '07, page 2–es, New York, NY, USA, 2007. Association for
+  Computing Machinery.
+
 \bibitem{cs-lmbench}
 Larry~W. McVoy and Carl Staelin.
 \newblock lmbench: Portable tools for performance analysis.
@@ -22,5 +29,11 @@ Larry~W. McVoy and Carl Staelin.
 John~K. Ousterhout.
 \newblock Why aren't operating systems getting faster as fast as hardware?
 \newblock In {\em USENIX Summer}, 1990.
+
+\bibitem{serverless-main}
+Mohammad Shahrad, Jonathan Balkind, and David Wentzlaff.
+\newblock Architectural implications of function-as-a-service computing.
+\newblock {\em Proceedings of the 52nd Annual IEEE/ACM International Symposium
+  on Microarchitecture}, 2019.
 
 \end{thebibliography}

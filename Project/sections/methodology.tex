@@ -18,7 +18,8 @@ Measuring the context switch time in serverless functions has several challenges
 \subsection{}
 	To tackle \emph{C1}, we design the following experiments to analyze the factors influencing context switch in serverless environments.
 	We measure the execution time elapse between two adjacent lines of code repeatedly under different configurations in serverless functions.
-	These configurations include %xxxxx
+	Shahrad \emph{et al.} \cite{serverless-main} shows that the execution time in serverless functions is influenced by function invocation frequency, memory size and function type.
+	Thus these configurations will include the function invocation rate, memory allocated.
 	Theoriotically, the measured time elapse should be 0 as there is not execution between these two lines. 
 	However, our initial experiments show that this is neither 0 nor a fixed value, indicating that interruption happens between these two lines
 	and the time elapse changes with different configurations. 
@@ -32,11 +33,13 @@ Measuring the context switch time in serverless functions has several challenges
 	 If one of the benchmarks is consistently higher or lower than others, then we'll explore the reasons and this can help us improve our accuracy.
 
 	The previous benchmarks in context switching on Linux system mainly consider %some fa
-	Our initial study to \emph{C1} finds that context switch in serverless environments will also be influenced by %some   
-	We designed the following benchmarks based on prior work.
+	Our initial study to \emph{C1} finds that context switch in serverless environments will also be influenced by invocation rate and memory allocation.   
+
+	Currently, the new benchmarks are designed as the prior benchmarks with different configurations.
+	The prior benchmarks we are choosing are:
 	\begin{enumerate}
 		\item 
 	\end{enumerate}
-
+	Next, we'll implement these functions with different invocation rate and memory allocation setting in the cloud.
 
 % "Based on these traditional methods, we also used pipe communication to implement frequent context switches between two processes."
