@@ -8,10 +8,27 @@
 % we first analyzes the triggers to context switch in Linus systems, 
 %In contrast, the cnsw in cloud involves more including ... and needs a more comprehensive ...
 
+Serverless computing is a new type of cloud application model. 
+Unlike traditional cloud computing, users only need to upload the function code into the cloud and the resources needed are scheduled by the provider.
+However, user's functions can't be executed continuously due to limited resource. 
+Providers want to invoke more functions at the same hardware to achieve the low resource cost. 
+When resources like memory or CPU is limited, a running function may be interrupted to let another function being executed.
+Thus, the function execution time(CPU wall-clock time) is larger than the actual execution time, which is presented in previous studies.\cite{serverless-main}
+For users, who are charged with the function execution time, this phenomenon makes them charged more than they should be.
+One of the main extra time is spent in context switch\cite{serverless-main}.
 
+Context switch\cite{cs-def} refers to the situation when the operating system interrupts the current execution and switch it off to another task.
+In Linux systems, this happens due to multithreading/processing or timer interruption. 
+There are various studies\cite{cs-arm,cs-datasize,cs-lmbench,cs-pipes} proposing benchmarks for measuring the context switch time in Linux systems.
+However, these benchmarks can't be directly used due to the programming languages used are not supported in current cloud environment.
+Also, there are other factors that may influence the number of the context switch and the context switch time in serverless environment,
+as the latter supports configurations like the memory allocated.
+
+Therefore, measuring the context switch time can reduce the user's cost in the future by reporting the extra time to the cloud provider.
+The characteristics of the context switch in the cloud are different from traditional Linux systems and also the current benchmarks can't be used directly.
 In this work, we aim to answer the following research questions:
 \begin{enumerate}
-	\item 
-	\item 
+	\item How to measure the context switch time accurately in a serverless environment?
+	\item What's the factors that may influence the number and time of the context switch in a serverless environment?
 	
 \end{enumerate}

@@ -1,0 +1,7 @@
+Memory: 256mb
+CS time: 74.1us, 731.5us, 680.1us, 638.2us, 653.6us, 652.7us, 644.8us =>582.14
+memory: 128mb
+CS time: 1353.4us, 1455.5us, 1323.5us, 1441.7us, 1441.5us, 1189.9us, 1526.5us
+memory: 512mb
+CS time: 88.1us, 701.8us, 692.7us, 667us, 682.15us, 698.8us, 715.75us, 553us, 672.4us, 666us, 683.3us => 620.054
+

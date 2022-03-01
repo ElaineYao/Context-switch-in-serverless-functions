@@ -1,2 +1,8 @@
 % Chen \emph{et al.}\cite{side-channel-shuo-chen} 
+A few studies\cite{cs-arm,cs-datasize,cs-lmbench,cs-pipes} have proposed benchmarks for measuring context switch in Linux system.
+Ousterhout \emph{et al.}\cite{cs-pipes} proposes using two pipes to ping pong data between two processes.
+McVoy \emph{et al.}\cite{cs-lmbench} reduces the cost of system calls for context switch by designing a ring of pipes,
+and they also consider the influence of data size and cache size on the context switch time\cite{cs-datasize}.
+Suo \emph{et al.}\cite{cs-cloud} measures the context switch on the edge in AI workloads. 
+None of them considers the context switch in a serverless environment.
 

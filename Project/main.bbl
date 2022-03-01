@@ -13,6 +13,11 @@ Francis~M. David, Jeffrey~C. Carlyle, and Roy~H. Campbell.
   Science}, ExpCS '07, page 3–es, New York, NY, USA, 2007. Association for
   Computing Machinery.
 
+\bibitem{cs-def}
+David Kalinsky.
+\newblock Context switch.
+\newblock {\em Embedded Systems Programming}, 14(1):94--105, 2001.
+
 \bibitem{cs-datasize}
 Chuanpeng Li, Chen Ding, and Kai Shen.
 \newblock Quantifying the cost of context switch.
@@ -35,5 +40,11 @@ Mohammad Shahrad, Jonathan Balkind, and David Wentzlaff.
 \newblock Architectural implications of function-as-a-service computing.
 \newblock {\em Proceedings of the 52nd Annual IEEE/ACM International Symposium
   on Microarchitecture}, 2019.
+
+\bibitem{cs-cloud}
+Kun Suo, Yong Shi, Chih-Cheng Hung, and Patrick Bobbie.
+\newblock {\em Quantifying Context Switch Overhead of Artificial Intelligence
+  Workloads on the Cloud and Edges}, page 1182–1189.
+\newblock Association for Computing Machinery, New York, NY, USA, 2021.
 
 \end{thebibliography}
