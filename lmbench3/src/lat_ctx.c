@@ -92,6 +92,7 @@ main(int ac, char **av)
 		lmbench_usage(ac, av, usage);
 
 	/* compute pipe + sumit overhead */
+	// atoi: convert string to an integer
 	maxprocs = atoi(av[optind]);
 	for (i = optind; i < ac; ++i) {
 		state.procs = atoi(av[i]);
@@ -135,8 +136,11 @@ initialize_overhead(iter_t iterations, void* cookie)
 
 	if (iterations) return;
 
+
 	pState->pids = NULL;
+	// return a pointer to the allocated memory for process size
 	pState->p = (int**)malloc(pState->procs * (sizeof(int*) + 2 * sizeof(int)));
+	// p -> the number of processes
 	p = (int*)&pState->p[pState->procs];
 	for (i = 0; i < pState->procs; ++i) {
 		pState->p[i] = p;
@@ -341,7 +345,13 @@ create_pipes(int **p, int procs)
 	 * Get a bunch of pipes.
 	 */
 	morefds();
+
+	// int fd[2];
+	// pipe(fd);
+	// fd[0] is setup for reading, the output of fd[1] is the inputs for fd[0]
+	// I'm guessing this to form a ring of pipes, in which p is a 2d array
      	for (i = 0; i < procs; ++i) {
+			 // return val of pipe()==1 -> error
 		if (pipe(p[i]) == -1) {
 			return i;
 		}

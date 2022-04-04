@@ -41,18 +41,18 @@ Measuring the context switch time in serverless functions has several challenges
 		      One thread/process writes the data to another process through a pipe, which induces a context switch. 
 			  After the data is read, the read thread/process transfers the data to write thread/process and this induces another context switch.
 			  The total execution time equals the read and write operation time adds two context switch time.
-			  In contrast, a single process is created. It pass the data through a pipe to it self. 
-			  Here the total execution time only consists of the read and write opration time.
-			  By substracting these two time and dividing the result with 2, we get the context switch time.
+			  In contrast, a single process is created. It passes the data through a pipe to itself. 
+			  Here the total execution time only consists of the read and write operation time.
+			  By subtracting these two time and dividing the result with 2, we get the context switch time.
 	
 	2. Condition var\cite{cs-web}: A shared variable between two threads is used and is protected by mutex to prevent it from being modified by two threads at the same time.
 		      A signal is passed between two threads to tell which thread has the access to write the variable.
 			  And by passing the signals, the context will switch from one thread to the other. 
 			  The time for the signal changes is the context switch time.
 	
-	3.  Lmbench\cite{cs-lmbench}: A ring of pipes is created and a token is passed from process to process with thses pipes. 
+	3.  Lmbench\cite{cs-lmbench}: A ring of pipes is created, and a token is passed from process to process with these pipes. 
 	          Also, the time of passing the token in a single process with this ring of pipes is measured. 
-			  Substraction of these two time is the total context switch time of a number of context switches.
+			  Subtraction of these two time is the total context switch time of a number of context switches.
 
 	Next, we'll implement these functions with different invocation rate and memory allocation setting in the cloud,
 	to measure the influence of configurations on the context switch time.

@@ -126,6 +126,9 @@ cleanup(iter_t iterations, void * cookie)
 	if (state->clone) unlink(state->filename);
 }
 
+// ac: the number of command-line arguments+name of the program.
+// av: array of arguments
+
 int
 main(int ac, char **av)
 {
@@ -141,7 +144,8 @@ main(int ac, char **av)
 		"\nmin size=%d\n",(int) (XFERSIZE>>10)) ;
 
 	state.clone = 0;
-
+	
+	// assign value to parallel, warmup, repetitions and clone
 	while (( c = getopt(ac, av, "P:W:N:C")) != EOF) {
 		switch(c) {
 		case 'P':
@@ -166,6 +170,7 @@ main(int ac, char **av)
 	if (optind + 3 != ac) { /* should have three arguments left */
 		lmbench_usage(ac, av, usage);
 	}
+
 
 	strcpy(state.filename,av[optind+2]);
 	count = bytes(av[optind]);
