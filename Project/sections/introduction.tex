@@ -8,27 +8,67 @@
 % we first analyzes the triggers to context switch in Linus systems, 
 %In contrast, the cnsw in cloud involves more including ... and needs a more comprehensive ...
 
-Serverless computing is a new type of cloud application model. 
-Unlike traditional cloud computing, users only need to upload the function code into the cloud and the resources needed are scheduled by the provider.
-However, user's functions can't be executed continuously due to limited resource. 
+Serverless computing is a new type of cloud application model.
+Instead of deploying virtual machines or containers, the developers only need to write functions without considering resource allocation, scheduling, etc. 
+This simplifies the process of deploying code into production. 
+Some commercial offerings include AWS lambda, Azure serverless and Google Cloud function. 
+The cloud provider will allocate resources on demand and the pricing model of serverless platforms is different. 
+It will bill the customers for the invocations times, functions execution time and the outbound network request. 
+For example, in Google Cloud Function, when the amount of invocation is beyond 2 millions, 
+for each extra million of invocation, it will charge \$0.4. 
+For each gigabyte of outbound network, it will charge \$0.12. 
+As for the execution time, the price is based on the amount memory and CPU resources provisioned for the function.
+In Table\ref{tab:price} For example, with 128 MB memory allocated and 0.2 GHz CPU frequency, the price for each second of execution time is \$0.00000231. 
+And for \$1, the function deployed on cloud can run at most for a week.
+As the memory doubles, so does the price and CPU frequency. 
+With more memory, the function will occupy more CPU resources. 
+For exchange, the user has to pay more.
+
+The execution time is measured from the time that the function receive a request, to the time it completes. 
+It may complete through signaling, timeout or other failures. 
+The problem is, user's functions can't be executed continuously due to limited resource. 
 Providers want to invoke more functions at the same hardware to achieve the low resource cost. 
 When resources like memory or CPU is limited, a running function may be interrupted to let another function being executed.
+Some CPU cycles are spent in OS scheduling, container management, page fault handling, etc.
 Thus, the function execution time(CPU wall-clock time) is larger than the actual execution time, which is presented in previous studies.\cite{serverless-main}
 For users, who are charged with the function execution time, this phenomenon makes them charged more than they should be.
-One of the main extra time is spent in context switch\cite{serverless-main}.
+In this project, we'll focus on the context switch in server, which is one of the main extra time contributor\cite{serverless-main}.
 
-Context switch\cite{cs-def} refers to the situation when the operating system interrupts the current execution and switch it off to another task.
-In Linux systems, this happens due to multithreading/processing or timer interruption. 
+Context switch\cite{cs-def} refers to the situation when the operating system interrupts the current execution and switch it off to another task in multithreading/processing.
+It happens when the number of processes/threads is more than the amount of CPU cores.
+In context switch, the OS has to save context registers for the currently-running process into the kernel stack,
+and then restore the context registers for the soon-to-be-executing process from is kernel stack\cite{OS-Book}.
+In this way, when the OS wants to resume the execution of previous process, it can just fetch the stored context registers.
+
 There are various studies\cite{cs-arm,cs-datasize,cs-lmbench,cs-pipes} proposing benchmarks for measuring the context switch time in Linux systems.
-However, these benchmarks can't be directly used due to the programming languages used are not supported in current cloud environment.
+Most of them are creating pipes among different threads or processes and using system call to force the context switches. 
+However, these benchmarks written in C can't be directly used in serverless environment as the latter only supports languages like Python, Go, PHP, Node.js, Java, etc.
 Also, there are other factors that may influence the number of the context switch and the context switch time in serverless environment,
-as the latter supports configurations like the memory allocated.
+for example, the memory configurations.
+The characteristics of the context switch in the cloud are different from traditional Linux systems and thus the current benchmarks can't be used directly.
 
-Therefore, measuring the context switch time can reduce the user's cost in the future by reporting the extra time to the cloud provider.
-The characteristics of the context switch in the cloud are different from traditional Linux systems and also the current benchmarks can't be used directly.
+Have a sense of the context switch time in serverless environment can help user know about the extra cost they're paying for and 
+may also motivate cloud providers to formulate more mature pricing model. 
 In this work, we aim to answer the following research questions:
 \begin{enumerate}
 	\item How to measure the context switch time accurately in a serverless environment?
 	\item What's the factors that may influence the number and time of the context switch in a serverless environment?
 	
 \end{enumerate}
+
+\begin{center}
+    \begin{table}
+    \begin{tabular}{||c c c c||} 
+     \hline
+     Memory & CPU frequency & Price/s & Time/\$ \\ 
+     \hline
+     128 MB & 0.2GHz & \$0.00000231 & 120h\\ 
+	 256 MB & 0.4GHz & \$0.00000463 & 60h\\ 
+	 512 MB & 0.8GHz & \$0.00000925 & 30h\\ 
+	 1 G & 1.4GHz & \$0.00001650 & 16.8h\\ 
+	 2 G & 2.4GHz & \$0.00002900 & 9.5h\\ 
+     \hline
+    \end{tabular}
+    \caption{\label{tab:price}Context switch time by different benchmarks}
+\end{table}
+\end{center}

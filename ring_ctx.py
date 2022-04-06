@@ -2,10 +2,11 @@ import os
 import sys
 import time
 import gc
+import csv
 
 # num of children
 global N
-N = 3
+N = 2
 
 
 def self_overhead():
@@ -17,6 +18,11 @@ def self_overhead():
     pid_sum = os.getpid()
     os.write(c1_wr, pid_sum.to_bytes(5, byteorder='big'))
     os.close(c1_wr)
+
+    for n in range(N):
+        pid = os.fork()
+        if(pid==0):
+            os._exit(os.EX_OK)
 
     for n in range(N):
         # pipes.append(os.pipe)
@@ -104,7 +110,12 @@ def main():
     cxt_overhead()
     p2_end = time.time()
     cxt_time = (p2_end-p2_start-self_time)/((N+1))
+    cst_time_us = "{:.3f}".format(cxt_time*1e6)
     print("Context switch time is: "+str(cxt_time))
+    with open('./pidsum.csv','a', newline='') as csvfile:
+            csvWriter = csv.writer(csvfile)
+            csvWriter.writerow([cst_time_us])
+
 
 
 if __name__ == "__main__":
