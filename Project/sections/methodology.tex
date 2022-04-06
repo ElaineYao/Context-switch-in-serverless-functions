@@ -5,16 +5,35 @@
 Measuring the context switch time in serverless functions has several challenges:
 \begin{itemize}
 	\item [C1] Characteristics of context switch in serverless environments
+	
 	Context switch is triggered differently in serverless functions compared to in traditional operating systems as it's scheduled by the cloud provider.
 	And the service provider has the tendency to trigger more functions in the same hardware to get more profits. 
 	Thus, context switch may happen not only due to performance factors like multi-threading/processing, but also provider's profit considerations.
+	
 	\item [C2] Benchmark accuracy
-	As no such benchmark is provided so far, we have to analyze the factors in our own benchmark that may lead to the potential variation to golden value, 
-	in order to reason about the accuracy of the measurement.
+	
+	As none of the existing benchmarks can be used in serverless environment, 
+	it's challenging for us to reason about the accuracy of new benchmarks proposed.
+	We also have to reason about the potential factors that might lead to variations in the measurement.
+%	As no such benchmark is provided so far, we have to analyze the factors in our own benchmark that may lead to the potential variation to golden value, 
+%	in order to reason about the accuracy of the measurement.
 	% Variations to golden values in measurement 
 \end{itemize}
 
-\subsection{Factors in serverless environment}
+\subsection{Reasoning context switches in serverless environment}
+	In a cloud setting, the cloud provider will allocate multiple users to share the same physical device, in order to maximize the computing resource utilization.
+	When there are multiple users co-locating at the same server, if the number of processes needed to run is larger than the cores inside the server, it's highly likely that there will be context switches. 
+	
+	Figure\ref{fig:cloud} shows one example scenario. 
+	
+	
+
+
+
+
+
+
+
 	To tackle \emph{C1}, we design the following experiments to analyze the factors influencing context switch in serverless environments.
 	We measure the execution time elapse between two adjacent lines of code repeatedly under different configurations in serverless functions.
 	Shahrad \emph{et al.} \cite{serverless-main} shows that the execution time in serverless functions is influenced by function invocation frequency, memory size and function execution time.
@@ -56,5 +75,12 @@ Measuring the context switch time in serverless functions has several challenges
 
 	Next, we'll implement these functions with different invocation rate and memory allocation setting in the cloud,
 	to measure the influence of configurations on the context switch time.
+	
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{./figure/cxt_cloud.png}
+	\caption{Context switches in serverless computing}
+	\label{fig:cloud}
+\end{figure}
 
 % "Based on these traditional methods, we also used pipe communication to implement frequent context switches between two processes."
