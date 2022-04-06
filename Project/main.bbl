@@ -6,6 +6,11 @@ Measuring context switching and memory overheads for linux threads.
   \url{https://eli.thegreenplace.net/2018/measuring-context-switching-and-memory-overheads-for-linux-threads/}.
 \newblock Accessed: 2022-2-25.
 
+\bibitem{OS-Book}
+Remzi~H. Arpaci-Dusseau and Andrea~C. Arpaci-Dusseau.
+\newblock {\em {Operating Systems: Three Easy Pieces}}.
+\newblock Arpaci-Dusseau Books, 1.00 edition, August 2018.
+
 \bibitem{cs-arm}
 Francis~M. David, Jeffrey~C. Carlyle, and Roy~H. Campbell.
 \newblock Context switch overheads for linux on arm platforms.

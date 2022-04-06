@@ -1,8 +1,9 @@
 import  os
 import threading
 import time
+import csv
 
-NUM_ITERATATION = 100000
+NUM_ITERATATION = 1000
 
 def measure_self(n):
     global p1_start, p1_end, self_time, p2_start, p2_end
@@ -67,6 +68,10 @@ def main():
     print("two process time: "+ str(two_process_time))
 
     print("Context switch time: "+ str((two_process_time-self_time)/(2*NUM_ITERATATION)))
+    cxt_time =(two_process_time-self_time)*1e6/(2*NUM_ITERATATION)
+    with open('./thread_pipe.csv','a', newline='') as csvfile:
+            csvWriter = csv.writer(csvfile)
+            csvWriter.writerow([cxt_time])
 
 if __name__ == "__main__":
     main()

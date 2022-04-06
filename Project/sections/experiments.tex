@@ -10,21 +10,44 @@ We plan to do experiments in more types of machines and operating systems to sho
 
 \subsection{Measuring local context switches}
 
-All the previous benchmarks\cite{cs-web,cs-datasize,cs-lmbench,cs-pipes} are implemented in C language.
-However, currently Google Cloud only supports functions written in Node.js, Go, Java, Python and Ruby.
-Considering that Python is one of the most popular languages, rewriting the prior benchmarks in Python and examining its correctness in local PC is important.
+% All the previous benchmarks\cite{cs-web,cs-datasize,cs-lmbench,cs-pipes} are implemented in C language.
+% However, currently Google Cloud only supports functions written in Node.js, Go, Java, Python and Ruby.
+% Considering that Python is one of the most popular languages, rewriting the prior benchmarks in Python and examining its correctness in local PC is important.
 
-The context switch time measured by the first three benchmarks in local PC is usually among 2us from Table~\ref{tab:experiment1}.
-In the first row, pipe, condition var and lmbench refers to methods listed in Section 2 respectively.
-However, when it's rewritten by Python, the measured time is 10 times larger than previous results. 
-The reason might be that extra execution is added to the time measurement when translating the language.
-What's more, the C programs execute faster as compiled programs while Python executes slower due its interpreted programs, 
-and these extra execution time is more obvious when using python. 
-Therefore, we plan to measure the time variation induced by Python on local computers and scale the measured time in cloud accordingly.
-Table~\ref{tab:experiment1} shows that the context switch time measured by the pipe method written in Python is about 17.14 times larger than measuring in C programs.
-In our further experiment in cloud, we'll take the python measured time divided by 17.14 as the context switch time.
+% The context switch time measured by the first three benchmarks in local PC is usually among 2us from Table~\ref{tab:experiment1}.
+% In the first row, pipe, condition var and lmbench refers to methods listed in Section 2 respectively.
+% However, when it's rewritten by Python, the measured time is 10 times larger than previous results. 
+% The reason might be that extra execution is added to the time measurement when translating the language.
+% What's more, the C programs execute faster as compiled programs while Python executes slower due its interpreted programs, 
+% and these extra execution time is more obvious when using python. 
+% Therefore, we plan to measure the time variation induced by Python on local computers and scale the measured time in cloud accordingly.
+% Table~\ref{tab:experiment1} shows that the context switch time measured by the pipe method written in Python is about 17.14 times larger than measuring in C programs.
+% In our further experiment in cloud, we'll take the python measured time divided by 17.14 as the context switch time.
+
+\subsubsection{Context switches time with different benchmarks}
+We write our own benchmark in Python, and we want to compare it with previous benchmarks to check its correctness. 
+Therefore, we show the results for thread context switching for with pingpong method, condition var and process context switching with lmbench and pid sum, and perf (+pidstat/vmstat?)
+For lmbench, we choose xxx size. We run 100 times and get the median value and variance. And we draw them below in the figures. - bar plot, median and variance
+
+1. Compare context switch between processes and threads.
+
+2. Compare context switch between programming languages. (Pay attention to divide Python by 10)
+
+\subsubsection{Context switch time with different number of processes}
+
+I can't guarantee the size of the process
+
 
 \subsection{Measuring context switches in the cloud}
+
+\subsubsection{Non-parametric analysis among different memories}
+
+We first collect 200 data for each memory setting. And then we perform xxx method to check the normality. 
+-> show the results for checking normallity
+
+Because it's not normal distribution, we then use non-parametric method to determine the number of experiment times. 
+
+
 
 We create functions with different memory allocated and measure the context switch time with the Ping pong pipes method.
 For each memory configuration we run 10 times and get the average of the calculated time. 
