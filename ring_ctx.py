@@ -7,6 +7,7 @@ import gc
 global N
 N = 3
 
+
 def self_overhead():
     pid_chk = os.getpid()
     affinity = os.sched_getaffinity(pid_chk)
@@ -53,7 +54,7 @@ def cxt_overhead():
     for n in range(N):
         p2 = os.pipe()
         sys.stdout.flush()
-        
+
         pid = os.fork()
         affinity = os.sched_getaffinity(pid)
         # child process
@@ -67,7 +68,8 @@ def cxt_overhead():
             os.write(p2[1], pid_sum.to_bytes(5, byteorder='big'))
             os.close(p1[0])
             os.close(p2[1])
-            os._exit(os.EX_OK)
+            print("child "+str(os.getpid())+", parent is "+str(os.getppid()))
+            # os._exit(os.EX_OK)
         # print("Child "+str(n+1) +" = "+str(pid))
         pid_chk += pid
         # parent close both ends of input pipe to the n child and use the output pipe as the input pipe for n+1 pipe
@@ -83,8 +85,9 @@ def cxt_overhead():
     os.close(c1_wr)
     pid_sum = os.read(cN_rd, 5)
     os.close(cN_rd)
-    # print("PID sum = "+str(int.from_bytes(pid_sum, byteorder='big')))
-    # print("PID_chk = "+str(pid_chk))
+    print("PID sum = "+str(int.from_bytes(pid_sum, byteorder='big')))
+    print("PID_chk = "+str(pid_chk))
+
 
 def main():
     # self measurement
@@ -102,6 +105,7 @@ def main():
     p2_end = time.time()
     cxt_time = (p2_end-p2_start-self_time)/((N+1))
     print("Context switch time is: "+str(cxt_time))
+
 
 if __name__ == "__main__":
     main()
