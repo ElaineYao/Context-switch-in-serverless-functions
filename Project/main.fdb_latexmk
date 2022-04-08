@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex main"] 1649259097 "main.aux" "main.bbl" "main" 1649259680
+["bibtex main"] 1649431891 "main.aux" "main.bbl" "main" 1649431985
   "/usr/local/texlive/2021/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1649259680 4079 711b0b63680beb89a9fd2551fff9a4a1 "pdflatex"
+  "main.aux" 1649431985 5140 be4dabcb32c2d58f6844dd80088e948b "pdflatex"
   "refences.bib" 1649258988 3582 c2ae2a5789facf52f68a436fff41c52c ""
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1649259679 "/home/elaine/571h_project/Project/main.tex" "main.pdf" "main" 1649259680
-  "/home/elaine/571h_project/Project/main.tex" 1649084667 4146 27541db88fc4b42beb34695943b0f952 ""
+["pdflatex"] 1649431984 "/home/elaine/571h_project/Project/main.tex" "main.pdf" "main" 1649431985
+  "/home/elaine/571h_project/Project/main.tex" 1649427174 4147 eefdae613c4026b6ed3f65d9281929f5 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -181,14 +181,20 @@
   "/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1645986278 4410336 9a0a29906eb859c2474e81197df54e3a ""
   "/usr/local/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1645986328 2797779 d5dfcf0120b328c6f729de7c07c80f5d ""
   "/usr/local/texlive/2021/texmf.cnf" 1645986273 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "main.aux" 1649259680 4079 711b0b63680beb89a9fd2551fff9a4a1 "pdflatex"
-  "main.bbl" 1649259097 2087 1374b492310a950ac95d53fa4f9eae67 "bibtex main"
-  "main.out" 1649259680 2669 5fe2994cb29b41d6c7717e6721bb6c6f "pdflatex"
-  "main.tex" 1649084667 4146 27541db88fc4b42beb34695943b0f952 ""
-  "sections/experiments.tex" 1649086929 4559 f6c16841c46ba074d538542b07bfaca4 ""
+  "figure/cxt_cloud.png" 1649427174 8958 81c4f33bc38a2e7233317abdf6c7b8c2 ""
+  "figure/cxt_vs_exe.png" 1649427174 38034 d161abbd0581831275281ad766a68cd3 ""
+  "figure/pipes.png" 1649429371 42421 525ec16adecff816c0df4d96b1a30dff ""
+  "figure/ring.png" 1649429789 53123 e0209673214e9501d668ec815a333231 ""
+  "figure/thread_cloud.png" 1649430839 40510 d495e918a83898141a6b4aa8d5a783d9 ""
+  "figure/thread_local.png" 1649430849 55676 3a2a217582c56eca2e0399c3031839ca ""
+  "main.aux" 1649431985 5140 be4dabcb32c2d58f6844dd80088e948b "pdflatex"
+  "main.bbl" 1649431891 2087 1374b492310a950ac95d53fa4f9eae67 "bibtex main"
+  "main.out" 1649431985 2315 2e50f74537cf88222f182a26e666bcdd "pdflatex"
+  "main.tex" 1649427174 4147 eefdae613c4026b6ed3f65d9281929f5 ""
+  "sections/experiments.tex" 1649431983 7626 6260cf60dd37241522df1935ddf9dadc ""
   "sections/future work.tex" 1649084667 403 50e76b07252ff2d48493f622cb46af39 ""
   "sections/introduction.tex" 1649259679 5305 4dd3039914d77fdd71de5e7bee4491b2 ""
-  "sections/methodology.tex" 1649084667 4741 dae0e09ef99b0864bbc167d4b0ecb242 ""
+  "sections/methodology.tex" 1649430204 8654 d69d19a9204ff44ebb7ae4b916e5b5dc ""
   "sections/related-work.tex" 1649084667 680 5384645748845aabce14cbd839e0a119 ""
   "usenix_2020_09.sty" 1646016608 3795 62775b94e6f3aaf4bda0ce3e06335b5f ""
   (generated)
